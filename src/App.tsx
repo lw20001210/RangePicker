@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button, DatePicker, Form, Space } from "antd";
 import "./App.css";
-import moment from "moment";
+import dayjs from 'dayjs';
+dayjs.locale('zh-cn');
+import 'dayjs/locale/zh-cn';
 const { RangePicker } = DatePicker;
 function App() {
   const [form] = Form.useForm();
@@ -16,7 +18,8 @@ function App() {
   };
   const onFill = () => {
     form.setFieldsValue({
-      RangePicker: [moment(1725562983000), moment(1725562983000)],
+      // RangePicker: [moment(1725562983000), moment(1725562983000)],
+      RangePicker: [dayjs(1725562983000), dayjs(1725562983000)],
     });
   };
   return (
